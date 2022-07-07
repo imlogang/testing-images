@@ -11,7 +11,7 @@ jobs:
     #   xcode: 13.4.0
     docker:
      # - image: cimg/openjdk:18.0.1-node
-      - image: circleci/node:10.16.3
+      - image: cimg/postgres:13.4-postgis
     resource_class: medium
     # shell: /bin/bash --login -eo pipefail
     steps:
