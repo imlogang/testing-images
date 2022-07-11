@@ -15,14 +15,14 @@ jobs:
     resource_class: medium
     # shell: /bin/bash --login -eo pipefail
     steps:
-      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/v7.2.2
-      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/v7.2.2
-      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/v7.2.2
-      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/v7.2.2
-      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/v7.2.2
-      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/v7.2.2
-      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/v7.2.2
-      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/v7.2.2
+      - run: curl -sL https://firebase.tools | bash
+      - run: curl -sL https://firebase.tools | bash
+      - run: curl -sL https://firebase.tools | bash
+      - run: curl -sL https://firebase.tools | bash
+      - run: curl -sL https://firebase.tools | bash
+      - run: curl -sL https://firebase.tools | bash
+      - run: curl -sL https://firebase.tools | bash
+      - run: curl -sL https://firebase.tools | bash
       
       
 #version: 2.1
