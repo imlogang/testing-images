@@ -16,7 +16,7 @@ workflows:
 executors: 
   docker:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:18.4.0
 
 
 jobs:
