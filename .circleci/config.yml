@@ -16,7 +16,7 @@ workflows:
 executors: 
   macos:
     macos:
-      - xcode: 13.4.1
+      xcode: 13.4.1
 
 
 jobs:
