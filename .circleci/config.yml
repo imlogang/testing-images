@@ -31,18 +31,16 @@ jobs:
      # - image: cimg/base:2022.06
     executor: << parameters.os >>
     resource_class: medium
-    # shell: /bin/bash --login -eo pipefail
     steps:
       - checkout
       - restore_cache:
           keys:
             - v1-{{ checksum "package.json"}}
-
       - run: npm install -g firebase-tools
       - save_cache:
           key: v1
           paths:
-            - package.json
+            - ./package.json
 
 
 
