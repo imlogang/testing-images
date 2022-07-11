@@ -9,14 +9,14 @@ workflows:
       - breaking-curl:
           matrix: 
             parameters:
-              os: [macos]
+              os: [docker]
               node-version: ["10.9.0", "11.9.0", "12.9.1", "13.9.0", "18.5.0", "18.4.0", "18.3.0", "18.2.0", "18.1.0", "18.0.0", "17.9.1", "17.9.0", "17.8.0", "17.7.2", "17.7.1"]
 
 
 executors: 
-  macos:
-    macos:
-      xcode: 13.4.1
+  docker:
+    docker:
+      - image: cimg/base:stable
 
 
 jobs:
@@ -33,7 +33,15 @@ jobs:
     resource_class: medium
     # shell: /bin/bash --login -eo pipefail
     steps:
+      - checkout
+      - save_cache:
+          key: my-cache
+          paths:
+            - package.json
       - run: npm install -g firebase-tools
+      - restore_cache:
+          keys:
+            -v1-{{ checksum "package.json"}}
 
 
       
