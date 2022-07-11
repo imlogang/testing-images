@@ -34,13 +34,7 @@ jobs:
     # shell: /bin/bash --login -eo pipefail
     steps:
       - run: curl -sL https://firebase.tools | bash
-      - run: curl -sL https://firebase.tools | bash
-      - run: curl -sL https://firebase.tools | bash
-      - run: curl -sL https://firebase.tools | bash
-      - run: curl -sL https://firebase.tools | bash
-      - run: curl -sL https://firebase.tools | bash
-      - run: curl -sL https://firebase.tools | bash
-      - run: curl -sL https://firebase.tools | bash
+
       
       
 #version: 2.1
