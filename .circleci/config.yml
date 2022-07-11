@@ -3,10 +3,10 @@ version: 2.1
 workflows:
   breaking-curl:
     jobs:
-      - breaking-cu
+      - breaking-curl
 
 jobs:
-  breaking curl:
+  breaking-curl:
      macos:
        xcode: 13.4.0
     docker:
