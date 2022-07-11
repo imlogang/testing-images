@@ -34,14 +34,16 @@ jobs:
     # shell: /bin/bash --login -eo pipefail
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            -v1-{{ checksum "package.json"}}
+
+      - run: npm install -g firebase-tools
       - save_cache:
           key: my-cache
           paths:
             - package.json
-      - run: npm install -g firebase-tools
-      - restore_cache:
-          keys:
-            -v1-{{ checksum "package.json"}}
+
 
 
       
