@@ -1,19 +1,41 @@
 version: 2.1
 
 workflows:
-  testing-ssh:
+  breaking-curl:
     jobs:
-      - testing-ssh
+      - breaking-cu
 
 jobs:
-  testing-ssh:
-    # macos:
-    #   xcode: 13.4.0
+  breaking curl:
+     macos:
+       xcode: 13.4.0
     docker:
      # - image: cimg/openjdk:18.0.1-node
-      - image: rancher/cli:v2.0.4
+     # - image: cimg/base:2022.06
     resource_class: medium
     # shell: /bin/bash --login -eo pipefail
     steps:
-        - checkout
-        - run: echo "testing"
+      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/latest
+      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/latest
+      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/latest
+      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/latest
+      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/latest
+      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/latest
+      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/latest
+      - run: curl --connect-timeout 120.0 --max-time 120.0 -Lo ./firebase_bin https://firebase.tools/bin/macos/latest
+      
+      
+#version: 2.1
+# ro
+#
+#jobs:
+#  runner:
+#    machine: true
+#    resource_class: logan/medium
+#    steps:
+#      - run: echo "Hi I'm on Runners!"
+#
+#workflows:
+#  testing:
+#    jobs:
+#      - runner
