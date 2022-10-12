@@ -1,62 +1,11 @@
 version: 2.1
-
-orbs:
-  node: circleci/node@5.0.2
-
 workflows:
-  breaking-curl:
+  testing:
     jobs:
-      - breaking-curl:
-          matrix: 
-            parameters:
-              os: [macos]
-              node-version: ["10.9.0", "11.9.0", "12.9.1", "13.9.0", "18.5.0", "18.4.0", "18.3.0", "18.2.0", "18.1.0", "18.0.0", "17.9.1", "17.9.0", "17.8.0", "17.7.2", "17.7.1"]
-
-
-executors: 
-  macos:
-    macos:
-      xcode: 13.4.1
-
-
+      - runner-test
 jobs:
-  breaking-curl:
-    parameters:
-      os:
-        type: executor 
-      node-version:
-        type: string
-    # docker:
-     # - image: cimg/openjdk:18.0.1-node
-     # - image: cimg/base:2022.06
-    executor: << parameters.os >>
-    resource_class: medium
+  runner-test:
+    machine: true
+    resource_class: logan/macos
     steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-{{ checksum "package.json"}}
-      - run: npm install -g firebase-tools
-      - save_cache:
-          key: v1-{{ checksum "package.json"}}
-          paths:
-            - ./package.json
-
-
-
-      
-      
-#version: 2.1
-# ro
-#
-#jobs:
-#  runner:
-#    machine: true
-#    resource_class: logan/medium
-#    steps:
-#      - run: echo "Hi I'm on Runners!"
-#
-#workflows:
-#  testing:
-#    jobs:
-#      - runner
+      - run: echo "Hi I'm on Runners!"
