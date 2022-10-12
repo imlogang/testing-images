@@ -5,7 +5,8 @@ workflows:
       - runner-test
 jobs:
   runner-test:
-    machine: true
+    machine:
+      image: ubuntu-2004:current
     resource_class: logan/macos1
     steps:
       - run: echo "Hi I'm on Runners!"
