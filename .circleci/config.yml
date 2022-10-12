@@ -6,6 +6,6 @@ workflows:
 jobs:
   runner-test:
     machine: true
-    resource_class: logan/macos
+    resource_class: logan/macos1
     steps:
       - run: echo "Hi I'm on Runners!"
