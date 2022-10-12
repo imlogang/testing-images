@@ -5,7 +5,8 @@ workflows:
       - runner-test
 jobs:
   runner-test:
-    machine: true
+    docker:
+      - image: cimg/base:current
     resource_class: logan/macos1
     steps:
       - run: echo "Hi I'm on Runners!"
